@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.scss";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainScene from "./scene/main";
@@ -11,8 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path={"/"} component={MainScene}></Route>
-        <Route path={"/select"} component={SelectScene}></Route>
+        <Route exact path={"/"} component={SelectScene}></Route>
+        <Route path={"/main"} component={MainScene}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,

@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./selectScene.module.scss";
-import selectimg from "../../asset/image/main.png";
-import arrow from "../../asset/image/arrow.png";
+import { useHistory } from "react-router-dom";
+
+import { selectimg, arrow } from "../../asset/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStore,
@@ -15,6 +16,7 @@ const cn = cb.bind(styles);
 library.add(faStore, faMapMarkedAlt, faAngleDoubleRight);
 
 const SelectScene = () => {
+  const history = useHistory();
   return (
     <div>
       <div className={cn("top_content")}>
@@ -42,7 +44,7 @@ const SelectScene = () => {
           <p className={cn("store-card-text")}>업종검색</p>
         </div>
       </div>
-      <div className={cn("bottom-card")}>
+      <div className={cn("bottom-card")} onClick={() => history.push("/main")}>
         <p className={cn("bottom-card-text")}>상권 둘러보기</p>
         <img src={arrow} className={cn("arrow")} />
       </div>
