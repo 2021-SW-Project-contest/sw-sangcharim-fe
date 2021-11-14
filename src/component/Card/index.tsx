@@ -1,6 +1,9 @@
 import React, { ReactChild, ReactNode, useEffect, useState } from "react";
 import internal from "stream";
-import "./categorycard.scss";
+import styles from "./categoryCard.module.scss";
+import cb from "classnames/bind";
+
+const cn = cb.bind(styles);
 
 interface CardProps {
   className?: string;
@@ -15,7 +18,7 @@ const CategoryCard = (prop: CardProps) => {
   const { className, onClick, img, children } = prop;
   return (
     <div
-      className={`categorycard_ ${className}`}
+      className={cn("categorycard", `${className}`)}
       onClick={() => {
         if (onClick !== null && onClick !== undefined) {
           onClick();
