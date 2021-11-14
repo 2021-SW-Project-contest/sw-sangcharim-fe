@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./selectScene.module.scss";
-import selectimg from "../../image/main.png";
-import arrow from "../../image/arrow.png";
+import selectimg from "../../asset/image/main.png";
+import arrow from "../../asset/image/arrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStore,
