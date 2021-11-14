@@ -1,17 +1,5 @@
-@font-face {
-  font-family: "Vitro_core";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Vitro_pride";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_pride.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+@import "../../scss/font.scss";
+
 .top_content {
   height: 481px;
   width: 100%;
@@ -21,16 +9,16 @@
     .header_text {
       padding-top: 70px;
       padding-left: 30px;
-      font-family: "Vitro_core";
+      font-family: $Vitro_core;
       font-size: 40px;
-      color: #09417b;
+      color: $deep-blue;
       margin: 0;
     }
   }
   .description {
     p {
-      font-family: "Vitro_pride";
-      color: #282828;
+      font-family: $Vitro_pride;
+      color: $deep-gray;
       margin: 0;
       font-size: 26px;
       padding-left: 30px;
@@ -45,6 +33,7 @@
     display: flex;
     justify-content: center;
     bottom: 0;
+    box-shadow: 0 36px 35px #f7f7f7;
 
     .img {
       width: 294px;
@@ -78,7 +67,7 @@
     .map-card-text {
       font-size: 17px;
       color: #ffffff;
-      font-family: "Vitro_pride";
+      font-family: $Vitro_pride;
       margin: 0;
       padding-top: 10px;
     }
@@ -97,12 +86,12 @@
     .store {
       width: 58px;
       height: auto;
-      color: #1a528c;
+      color: $light-blue;
     }
     .store-card-text {
       font-size: 17px;
-      color: #1a528c;
-      font-family: "Vitro_pride";
+      color: $light-blue;
+      font-family: $Vitro_pride;
       margin: 0;
       padding-top: 10px;
     }
@@ -114,21 +103,22 @@
   margin-left: 30px;
   width: 315px;
   height: 70px;
-  border: 2px solid#1a528c;
+  border: 2px solid$light-blue;
   border-radius: 10px;
   display: flex;
   align-items: center;
 
   .bottom-card-text {
-    color: #1a528c;
+    color: $light-blue;
     font-size: 26px;
-    font-family: "Vitro_pride";
+    font-family: $Vitro_pride;
     margin: 0;
     padding-left: 30px;
   }
   .arrow {
-    color: #1a528c;
+    color: $light-blue;
     font-size: 26px;
-    padding-left: 100px;
+    padding-left: 80px;
+    width: 40px;
   }
 }

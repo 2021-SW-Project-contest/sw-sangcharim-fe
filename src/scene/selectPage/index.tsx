@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./seletpageScene.module.scss";
 import selectimg from "../../image/main.png";
+import arrow from "../../image/arrow.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faStore,
@@ -43,7 +44,7 @@ const SelectScene = () => {
       </div>
       <div className={sy("bottom-card")}>
         <p className={sy("bottom-card-text")}>상권 둘러보기</p>
-        <FontAwesomeIcon icon={faAngleDoubleRight} className={sy("arrow")} />
+        <img src={arrow} className={sy("arrow")} />
       </div>
     </div>
   );
