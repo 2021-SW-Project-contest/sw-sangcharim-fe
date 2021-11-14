@@ -6,7 +6,7 @@ const cn = cb.bind(styles);
 const MainScene = () => {
   return (
     <div>
-      <p className={cn("test-txt")}>메인화면입니다.</p>
+      <p className={cn("test-txt", "lala")}>메인화면입니다.</p>
     </div>
   );
 };
