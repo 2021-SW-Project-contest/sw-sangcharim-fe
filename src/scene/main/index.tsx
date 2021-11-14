@@ -8,6 +8,7 @@ const MainScene = () => {
     <div>
       <p className={cn("test-txt")}>메인화면입니다</p>
       <p>예시입니다.</p>
+      <p className={cn("test-txt")}>메인화면입니다.</p>
     </div>
   );
 };
