@@ -4,12 +4,14 @@ import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainScene from "./scene/main";
+import SelectScene from "./scene/selectPage";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route path={"/"} component={MainScene}></Route>
+        <Route exact path={"/"} component={MainScene}></Route>
+        <Route path={"/select"} component={SelectScene}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,
