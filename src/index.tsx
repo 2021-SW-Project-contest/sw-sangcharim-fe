@@ -10,8 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact path={"/"} component={MainScene}></Route>
-        <Route path={"/select"} component={SelectScene}></Route>
+        <Route exact path={"/"} component={SelectScene}></Route>
+        <Route path={"/main"} component={MainScene}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,

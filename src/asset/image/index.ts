@@ -1,3 +1,4 @@
-import selectimg from "../../image/main.png";
+import selectimg from "./main.png";
+import arrow from "./arrow.png";
 
-export { selectimg };
+export { selectimg, arrow };
