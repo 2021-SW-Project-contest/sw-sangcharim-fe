@@ -13,8 +13,8 @@ const MainScene = () => {
   return (
     <div className={cn("container")}>
       <div className={cn("wrapper")}>
-        <MapScene></MapScene>
-        <BottomTab></BottomTab>
+        <MapScene />
+        <BottomTab />
       </div>
     </div>
   );
