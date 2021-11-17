@@ -1,0 +1,10 @@
+@import "../../scss/font.scss";
+
+.graph {
+  background-color: rgba(112, 105, 105, 0.21);
+  width: 100%;
+  height: 100%;
+  .card {
+    margin-bottom: 17px;
+  }
+}
