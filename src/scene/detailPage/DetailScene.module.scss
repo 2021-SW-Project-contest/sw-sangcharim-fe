@@ -6,5 +6,15 @@
   height: 100%;
   .card {
     margin-bottom: 17px;
+    .timesales {
+      width: 350px;
+      margin: 0 auto;
+    }
+    .density {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto;
+      position: relative;
+    }
   }
 }
