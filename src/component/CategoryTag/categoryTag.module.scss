@@ -1,0 +1,21 @@
+.container {
+  margin: 5px;
+  height: 30px;
+  float: left;
+  overflow: auto;
+  .wrapper {
+    border-radius: 14px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: #666666;
+    float: left;
+    overflow: auto;
+    padding: 0 5px;
+    p {
+      margin: 5px 15px 5px 5px;
+      color: #ffffff;
+    }
+  }
+}
