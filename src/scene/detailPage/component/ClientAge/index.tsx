@@ -19,11 +19,11 @@ const ClientAge = () => {
       {
         data: [30, 50, 30, 30, 40],
         backgroundColor: [
-          "rgba(50,91,173,0.6)",
-          "rgba(50,91,173,0.9)",
-          "rgba(50,91,173,0.7)",
-          "rgba(50,91,173,0.5)",
-          "rgba(50,91,173,0.3)",
+          "#6f8cc5",
+          "#466bb5",
+          "#6f8cc5",
+          "#466bb5",
+          "#6f8cc5",
         ],
       },
     ],
@@ -46,7 +46,8 @@ const ClientAge = () => {
               ticks: {
                 font: {
                   size: 17,
-                  family: "Vitro_pride",
+
+                  weight: "bold",
                 },
               },
             },
@@ -71,7 +72,7 @@ const ClientAge = () => {
 
               font: {
                 weight: "bold",
-                size: 14,
+
                 family: "Vitro_pride",
               },
               formatter: function (value) {

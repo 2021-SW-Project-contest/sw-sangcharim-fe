@@ -7,7 +7,7 @@ import { Chart } from "chart.js";
 const cn = cb.bind(styles);
 
 const Density = () => {
-  const percent_value = 2;
+  const percent_value = 1;
   const data = {
     maintainAspectRatio: false,
     responsive: false,
@@ -26,7 +26,7 @@ const Density = () => {
         options={{
           //size변경 가능할수있는 옵션
           // maintainAspectRatio: false,
-          cutout: 58,
+          cutout: 55,
           rotation: 250,
           scales: {
             y: {
