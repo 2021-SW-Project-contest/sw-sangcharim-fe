@@ -1,0 +1,22 @@
+@import "../../../../scss/font.scss";
+
+.text_wrapper {
+  width: 150px;
+  text-align: center;
+  position: absolute;
+  background-color: white;
+  top: 50px;
+  right: -25px;
+  .text {
+    font-size: 20px;
+    font-family: $Vitro_pride;
+    color: #122256;
+    margin: 0;
+  }
+  .percent {
+    font-size: 30px;
+    font-family: $Vitro_core;
+    color: #122256;
+    margin: 0;
+  }
+}
