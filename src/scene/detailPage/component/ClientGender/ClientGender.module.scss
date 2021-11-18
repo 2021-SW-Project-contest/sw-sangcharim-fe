@@ -16,6 +16,75 @@
       .circle_wrapper {
         width: 159px;
         height: 200px;
+        display: flex;
+        position: relative;
+        align-items: center;
+        .man_circle {
+          width: 70px;
+          height: 70px;
+          background-color: rgba(50, 91, 173, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          left: 0;
+          bottom: 40px;
+
+          .percent {
+            font-size: 20px;
+            font-family: $Vitro_core;
+            color: #122256;
+          }
+        }
+        .woman_circle {
+          width: 120px;
+          height: 120px;
+          background-color: rgba(173, 50, 114, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 0;
+          bottom: 40px;
+          .percent {
+            font-size: 30px;
+            font-family: $Vitro_core;
+            color: #570f34;
+          }
+        }
+        .big_circle {
+          width: 120px;
+          height: 120px;
+          background-color: rgba(50, 91, 173, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .percent {
+            font-size: 30px;
+            font-family: $Vitro_core;
+            color: #122256;
+          }
+        }
+        .small_circle {
+          width: 70px;
+          height: 70px;
+          background-color: rgba(173, 50, 114, 0.1);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: absolute;
+          right: 0;
+          bottom: 40px;
+          .percent {
+            font-size: 20px;
+            font-family: $Vitro_core;
+            color: #570f34;
+          }
+        }
       }
     }
   }

@@ -7,6 +7,8 @@ import ClientGender from "./component/ClientGender";
 import ClientAge from "./component/ClientAge";
 import TimeSales from "./component/TimeSales";
 import Density from "./component/Density";
+import LocalSales from "./component/Local sales";
+import DailySales from "./component/DailySales";
 
 import cb from "classnames/bind";
 
@@ -21,15 +23,25 @@ const DetailScene = () => {
           <ClientGender />
         </DetailCard>
         <DetailCard className={cn("card")} text={"고객층 나이"}>
-          <ClientAge />
+          <div className={cn("clientage")}>
+            <ClientAge />
+          </div>
         </DetailCard>
         <DetailCard className={cn("card")} text={"가게 밀집도"}>
           <div className={cn("density")}>
             <Density />
           </div>
         </DetailCard>
-        <DetailCard className={cn("card")} text={"지역 매출"}></DetailCard>
-        <DetailCard className={cn("card")} text={"요일 매출"}></DetailCard>
+        <DetailCard className={cn("card")} text={"지역 매출"}>
+          <div className={cn("localsales")}>
+            <LocalSales />
+          </div>
+        </DetailCard>
+        <DetailCard className={cn("card")} text={"요일 매출"}>
+          <div className={cn("dailysales")}>
+            <DailySales />
+          </div>
+        </DetailCard>
         <DetailCard className={cn("card")} text={"시간 매출"}>
           <div className={cn("timesales")}>
             <TimeSales />
