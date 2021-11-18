@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "Vitro_core";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vitro_pride";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_pride.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$Vitro_core: "Vitro_core";
+$Vitro_pride: "Vitro_pride";
+$deep-blue: #09417b;
+$light-blue: #1a528c;
+$deep-gray: #282828;
