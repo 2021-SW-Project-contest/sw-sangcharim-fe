@@ -1,7 +1,12 @@
-.categorycard {
+@import "../../scss/font.scss";
+.container {
   background-color: #ffffff;
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
   z-index: 5;
+  box-shadow: 0 1px 18px #d1d1d1;
+  img {
+    width: 100px;
+  }
 }

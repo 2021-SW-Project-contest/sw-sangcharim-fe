@@ -7,26 +7,32 @@ const cn = cb.bind(styles);
 
 interface CardProps {
   className?: string;
+  wrapperClassName?: string;
   onClick?: Function;
-  //url 사용할경우
-  //img?: string;
-  img?: typeof Image;
-  children?: ReactNode;
+  data: {
+    img: string;
+    title: string;
+    desc: string;
+  };
+  // img?: typeof Image;
 }
 
 const CategoryCard = (prop: CardProps) => {
-  const { className, onClick, img, children } = prop;
+  const { className, onClick, data, wrapperClassName } = prop;
   return (
     <div
-      className={cn("categorycard", `${className}`)}
+      className={cn("container", className)}
       onClick={() => {
         if (onClick !== null && onClick !== undefined) {
           onClick();
         }
       }}
     >
-      {img}
-      {children}
+      <img src={data.img} alt={"category-img"} />
+      <div className={cn("text-wrapper", wrapperClassName)}>
+        <p>{data.title}</p>
+        <p>{data.desc}</p>
+      </div>
     </div>
   );
 };
