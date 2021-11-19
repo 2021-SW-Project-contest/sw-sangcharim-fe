@@ -1,10 +1,18 @@
-.wrapper {
+@import "../../../../scss/font.scss";
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #09417b;
+  background-color: $deep-blue;
   border-radius: 100px;
-  box-shadow: 1px 2px 10px 1px #09417b9c;
+  box-shadow: 0 4px 16px $deep-blue;
   width: 90px;
   height: 90px;
+  transition: all 600ms cubic-bezier(0.86, 0, 0.07, 1);
+
+  &.open {
+    background-color: #b42b66;
+    box-shadow: 0 4px 16px rgba(180, 43, 102, 0.5);
+    transform: rotate(45deg);
+  }
 }
