@@ -6,14 +6,20 @@ const cn = cb.bind(styles);
 interface ICategoryTagProps {
   onClick?: Function;
   children: React.ReactNode;
+  className?: string;
 }
+
 const CategoryTag = (props: ICategoryTagProps) => {
-  const { children } = props;
+  const { children, className = "_fill" } = props;
   return (
     <div className={cn("container")}>
-      <div className={cn("wrapper")}>
+      <div className={cn("wrapper", className)}>
         <p>{children}</p>
-        <MdCancel color={"#ffffff"}></MdCancel>
+        {className !== "_outline" ? (
+          <MdCancel color={"#ffffff"}></MdCancel>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );
