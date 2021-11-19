@@ -1,34 +1,57 @@
-import React, { useState, ReactNode } from "react";
+import React, { useState, ReactNode, useEffect } from "react";
 import styles from "./ToggleMenu.module.scss";
 
+import First from "./firstmenu";
+import Second from "./secondmenu";
 import cb from "classnames/bind";
 const cn = cb.bind(styles);
 
-interface CardProps {
-  className?: string;
-  text?: string;
-  children?: ReactNode;
-}
-
-const ToggleMenu = (prop: CardProps) => {
-  const { children, text } = prop;
-  const [openMenu, setOpenMenu] = useState(false);
-  const toggleMenu = () => {
-    setOpenMenu(!openMenu);
+const ToggleMenu = () => {
+  const [first, setFirst] = useState(false);
+  const [second, setSecond] = useState(false);
+  const firstMenu = () => {
+    setFirst(!first);
   };
+  const secondMenu = () => {
+    setSecond(!second);
+  };
+
   return (
     <div className={cn("container")}>
-      <button className={cn("button")} onClick={toggleMenu}>
-        {text}
-      </button>
-
-      {openMenu ? (
+      <div className={cn("first_address")}>
+        {first ? (
+          <button className={cn("active_button")} onClick={firstMenu}>
+            공릉동
+          </button>
+        ) : (
+          <button className={cn("button")} onClick={firstMenu}>
+            공릉동
+          </button>
+        )}
+        {second ? (
+          <button className={cn("active_button")} onClick={secondMenu}>
+            상계동
+          </button>
+        ) : (
+          <button className={cn("button")} onClick={secondMenu}>
+            상계동
+          </button>
+        )}
+      </div>
+      {first ? (
         <div className={cn("last_name")}>
-          <p className={cn("text")}>상계동</p>
+          <p className={cn("text")}>
+            <First />
+          </p>
         </div>
-      ) : (
-        <p> 지역을 선택하세요</p>
-      )}
+      ) : null}
+      {second ? (
+        <div className={cn("last_name")}>
+          <p className={cn("text")}>
+            <Second />
+          </p>
+        </div>
+      ) : null}
     </div>
   );
 };

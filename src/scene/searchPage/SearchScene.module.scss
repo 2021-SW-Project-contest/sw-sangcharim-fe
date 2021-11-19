@@ -50,7 +50,9 @@
     width: 100%;
 
     .first_address {
+      z-index: 0;
       width: 159px;
+      height: 100vh;
       background-color: rgba(128, 128, 128, 0.24);
     }
   }

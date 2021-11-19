@@ -23,10 +23,8 @@ const SearchScene = () => {
       </div>
       <div className={cn("bottom_content")}>
         <div className={cn("first_address")}>
-          <ToggleMenu text={"노원구"} />
-          <p className={cn("address_title")}></p>
+          <ToggleMenu />
         </div>
-        <div className={cn("last_address")}></div>
       </div>
     </div>
   );
