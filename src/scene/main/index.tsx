@@ -19,7 +19,7 @@ const MainScene = () => {
   return (
     <div className={cn("container")}>
       <div className={cn("wrapper")}>
-        <SelectPop className={cn(`${show ? "show" : ""}`)} />
+        <SelectPop className={cn(`${show ? "show" : ""}`)} show={show} />
         <MapScene />
         <BottomTab setShow={setShow} show={show} />
       </div>

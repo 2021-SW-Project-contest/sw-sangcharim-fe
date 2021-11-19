@@ -12,9 +12,7 @@ const BottomCircleButton = (props: IBottomCircleButton) => {
   const { className, onClick } = props;
   return (
     <div className={cn("container", className)} onClick={onClick}>
-      <div className={cn("wrapper")}>
-        <AiOutlinePlus size={50} color={"#ffffff"} />
-      </div>
+      <AiOutlinePlus size={50} color={"#ffffff"} className={"plus-icon"} />
     </div>
   );
 };
