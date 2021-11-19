@@ -15,11 +15,7 @@ const CategoryTag = (props: ICategoryTagProps) => {
     <div className={cn("container")}>
       <div className={cn("wrapper", className)}>
         <p>{children}</p>
-        {className !== "_outline" ? (
-          <MdCancel color={"#ffffff"}></MdCancel>
-        ) : (
-          <></>
-        )}
+        {className !== "_outline" ? <MdCancel color={"#ffffff"} /> : <></>}
       </div>
     </div>
   );
