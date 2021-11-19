@@ -2,20 +2,33 @@
   margin: 5px;
   height: 30px;
   float: left;
-  overflow: auto;
   .wrapper {
+    box-sizing: border-box;
     border-radius: 14px;
     display: flex;
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-    background-color: #a6a6a6;
     float: left;
     overflow: auto;
     padding: 0 5px;
     p {
       margin: 5px 15px 5px 5px;
+    }
+    &._fill {
+      background-color: #a6a6a6;
       color: #ffffff;
+      p {
+        margin: 5px 15px 5px 5px;
+        font-size: 16px;
+      }
+    }
+    &._outline {
+      border: 1px solid #c7c7c7;
+      p {
+        margin: 5px 12px;
+        font-size: 15px;
+      }
     }
   }
 }
