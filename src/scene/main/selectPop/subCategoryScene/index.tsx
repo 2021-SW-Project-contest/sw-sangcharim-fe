@@ -27,6 +27,7 @@ const caseList = [
 const SubCategoryScene = (props: ISubCategorySceneProps) => {
   const { selected, setSelected } = props;
   const [data, setData] = useState<IdataSet>();
+
   const getData = async () => {
     const response = await Business.fetch();
     response.map((item) => {
@@ -43,6 +44,7 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
     getData();
     console.log(`sub:${data}`);
   }, [selected]);
+
   return (
     <div className={cn("container")}>
       {data ? (
@@ -51,11 +53,11 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
             img={data.img}
             title={data.title}
             setSelected={setSelected}
-          ></SubMiddle>
+          />
           <div className={cn("tag-wrapper")}>
             {data &&
-              data.categoryList.map((item: IBusinessListProp) => (
-                <CategoryTag className="_outline">
+              data.categoryList.map((item: IBusinessListProp, key: number) => (
+                <CategoryTag key={key} className="_outline">
                   {item.businessName}
                 </CategoryTag>
               ))}

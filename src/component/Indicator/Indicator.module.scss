@@ -1,4 +1,5 @@
 @import "../../scss/global";
+@import "../../scss/font.scss";
 
 .container--center {
   height: calc(100vh - 250px);
@@ -112,7 +113,7 @@ $dot-width: 15px !default;
 $dot-height: 15px !default;
 $dot-radius: $dot-width/2 !default;
 
-$dot-color: rgba($color-primary, 0.9) !default;
+$dot-color: rgba($deep-blue, 0.9) !default;
 $dot-bg-color: $dot-color !default;
 $dot-before-color: $dot-color !default;
 $dot-after-color: $dot-color !default;
