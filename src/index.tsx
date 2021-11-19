@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainScene from "./scene/main";
 import SelectScene from "./scene/selectPage";
+import SearchScene from "./scene/searchPage";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path={"/"} component={SelectScene}></Route>
         <Route path={"/main"} component={MainScene}></Route>
+        <Route path={"/search"} component={SearchScene}></Route>
       </Switch>
     </Router>
   </React.StrictMode>,
