@@ -5,6 +5,8 @@ import { home } from "../../../asset/image";
 import { HiOutlineHome } from "react-icons/hi";
 import { GrMapLocation } from "react-icons/gr";
 import BottomCircleButton from "./bottomCircleButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons";
 const cn = cb.bind(styles);
 interface IBottomTab {
   setShow: any;
@@ -23,10 +25,12 @@ const BottomTab = (props: IBottomTab) => {
       <div className={cn("wrapper")}>
         <div className={cn("tab-item")}>
           <img src={home}></img>
+          {/* <FontAwesomeIcon icon="fa-solid fa-house" /> */}
+
           {/* <HiOutlineHome size={50} color={"#09417b"} /> */}
         </div>
         <div className={cn("tab-item")}>
-          <GrMapLocation size={50} color={"#09417b"} />
+          <FontAwesomeIcon icon={faMapMarkedAlt} className={cn("map")} />
         </div>
       </div>
     </div>
