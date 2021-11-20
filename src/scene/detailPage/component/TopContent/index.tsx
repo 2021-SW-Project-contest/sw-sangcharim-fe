@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./TopContent.module.scss";
 import { useHistory } from "react-router-dom";
 
@@ -8,12 +8,32 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+
 import cb from "classnames/bind";
+
+import { IDetail, IFuture } from "../../../../interface/IDetail";
+import { detailfetch, futurefetch } from "../../../../api/detail.api";
 
 const cn = cb.bind(styles);
 library.add(faMapMarkerAlt, faChevronLeft);
+
 const TopContent = () => {
   const history = useHistory();
+  const [data, setData] = useState<IFuture[]>();
+
+  const detail = async () => {
+    try {
+      await futurefetch().then((res) => {
+        console.log(res);
+        // setData(res);
+      });
+    } catch (e) {
+      console.log(e);
+    }
+  };
+  useEffect(() => {
+    detail();
+  }, []);
 
   return (
     <div className={cn("container")}>
