@@ -18,6 +18,7 @@ const First = () => {
   };
   const location = "공릉동";
   const sang = data.filter((data) => data.areaCategory == location);
+
   useEffect(() => {
     area();
   }, []);
@@ -38,3 +39,25 @@ const First = () => {
 };
 
 export default First;
+
+// const caseList = [
+//   { category: "외식업", img: restaurant },
+//   { category: "서비스업", img: service },
+//   { category: "소매업", img: retail },
+// ];
+// const SubCategoryScene = (props: ISubCategorySceneProps) => {
+//   const { selected, setSelected } = props;
+//   const [data, setData] = useState<IdataSet>();
+
+//   const getData = async () => {
+//     const response = await Business.fetch();
+//     response.map((item) => {
+//       if (item.businessCategory === caseList[selected].category) {
+//         setData({
+//           title: caseList[selected].category,
+//           categoryList: item.businessList,
+//           img: caseList[selected].img,
+//         });
+//       }
+//     });
+//   };
