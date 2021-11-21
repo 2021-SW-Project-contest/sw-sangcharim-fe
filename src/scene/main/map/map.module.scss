@@ -2,3 +2,10 @@
   width: 100%;
   height: calc(100vh - 70px);
 }
+.Indicator-map {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.3);
+}

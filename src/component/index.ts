@@ -1,3 +1,6 @@
 import CategoryCard from "./CategoryCardCard";
 import CategoryTag from "./CategoryTag";
-export { CategoryCard, CategoryTag };
+import CloseCustomOverlay from "./CloseCustomOverlay";
+import CustomOverlay from "./CustomOverlay";
+
+export { CategoryCard, CategoryTag, CustomOverlay, CloseCustomOverlay };
