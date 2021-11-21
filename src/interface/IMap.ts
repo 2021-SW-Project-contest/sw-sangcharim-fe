@@ -9,3 +9,12 @@ export interface IFarMap {
   focusLong: number;
   areaList: [IAreaList];
 }
+export interface ICloseMap {
+  name: string;
+  lat: number;
+  long: number;
+  areaCode: number;
+  areaName: string;
+  businessCode: number;
+  businessName: string;
+}
