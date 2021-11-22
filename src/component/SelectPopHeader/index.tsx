@@ -11,10 +11,7 @@ interface ISelectPop {
   className?: string;
   children?: ReactNode;
 }
-interface IPickList {
-  text: string;
-  key: number;
-}
+
 const SelectPopHeader = (props: ISelectPop) => {
   const { className, children } = props;
   const pick = useSelector((state: RootState) => state.pick.picked);

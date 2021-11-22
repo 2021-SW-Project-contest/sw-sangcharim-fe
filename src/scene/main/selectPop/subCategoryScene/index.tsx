@@ -57,6 +57,9 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
       });
     if (pick.length < 3 && isPicked) {
       dispatch(add(diff));
+      // console.log(pick.length);
+      // console.log(pick[0].businessCode);
+      // console.log(pick[1].businessCode);
     } else if (!(pick.length < 3)) {
       alert("최대 3가지 항목 선택 가능합니다.");
     } else if (!isPicked) {
