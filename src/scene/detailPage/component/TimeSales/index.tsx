@@ -5,16 +5,27 @@ import "../../../../scss/font.scss";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js";
+import { ISales } from "../../../../interface/IDetail";
 
 Chart.register(ChartDataLabels);
-
-const TimeSales = () => {
+interface TimeSalesProps {
+  dataSet: ISales;
+}
+const TimeSales = (props: TimeSalesProps) => {
+  const { dataSet } = props;
   const data = {
-    labels: ["10", "12", "14", "16", "18", "20", "22", "00", "2"],
+    labels: ["0-6", "6-11", "11-14", "14-17", "17-21", "21-24"],
     datasets: [
       {
         label: "First dataset",
-        data: [33, 53, 85, 41, 44, 65, 65, 65, 65],
+        data: [
+          dataSet.time.time0006,
+          dataSet.time.time0611,
+          dataSet.time.time1114,
+          dataSet.time.time1417,
+          dataSet.time.time1721,
+          dataSet.time.time2124,
+        ],
         fill: "start",
         backgroundColor: "rgba(9,66,125,0.5)",
         borderColor: "#09427d",
