@@ -1,122 +1,126 @@
 @import "../../../../scss/font.scss";
 
-.container {
-  width: 100%;
-  height: 338px;
-  .wrapper {
+body {
+  overflow-y: scroll;
+  .container {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
-      url("../../../../asset/image/BG-TOP.jpg");
-    background-size: contain;
-    display: inline-block;
-    .back {
-      background-color: transparent;
-      z-index: 3;
-      border: none;
-      position: absolute;
-      top: 17px;
-      left: 17px;
-      width: 35px;
-      height: 50px;
-      cursor: pointer;
-      .back_icon {
-        font-size: 30px;
-        color: white;
-      }
-    }
-
-    .circle_wrapper {
+    height: 338px;
+    z-index: 5;
+    .wrapper {
       width: 100%;
-      height: 233px;
-      position: relative;
-      .circle_1 {
-        width: 98px;
-        height: 98px;
-        border-radius: 50%;
-        background-color: rgba(50, 91, 173, 0.9);
+      height: 100%;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)),
+        url("../../../../asset/image/BG-TOP.jpg");
+      background-size: contain;
+      display: inline-block;
+      .back {
+        background-color: transparent;
+        z-index: 3;
+        border: none;
         position: absolute;
-        top: 21px;
-        right: 73px;
-        text-align: center;
-
-        p {
-          font-size: 15px;
-          font-family: $Vitro_pride;
-          color: #c8e3ff;
-          margin: 25px 0 0 0;
-        }
-        .percent {
-          color: white;
-          font-size: 25px;
-          font-family: $Vitro_core;
-          margin: 5px 0 0 0;
-        }
-      }
-      .circle_2 {
-        width: 73px;
-        height: 73px;
-        border-radius: 50%;
-        background-color: rgba(50, 91, 173, 0.3);
-        position: absolute;
-        top: 70px;
-        right: 22px;
-      }
-      .circle_3 {
-        width: 82px;
-        height: 82px;
-        border-radius: 50%;
-        background-color: rgba(50, 91, 173, 0.6);
-        position: absolute;
-        right: 29px;
-        bottom: 29px;
-        text-align: center;
-        p {
-          font-size: 15px;
-          font-family: $Vitro_pride;
-          color: #c8e3ff;
-          margin: 15px 0 0 0;
-        }
-        .percent {
-          color: white;
-          font-size: 20px;
-          font-family: $Vitro_core;
-          margin: 3px 0 0 0;
-        }
-      }
-    }
-    .address {
-      height: 80px;
-      position: relative;
-      margin-left: 20px;
-      margin-bottom: 25px;
-
-      .address_top {
-        position: absolute;
-        display: flex;
-        align-items: baseline;
-        top: 0;
-        width: 100%;
-        .ping {
-          color: white;
+        top: 17px;
+        left: 17px;
+        width: 35px;
+        height: 50px;
+        cursor: pointer;
+        .back_icon {
           font-size: 30px;
-        }
-        .top_address {
-          margin-left: 10px;
-          font-size: 15px;
           color: white;
-          font-family: $Vitro_pride;
         }
       }
-    }
-    .address_bottom {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
-      font-family: $Vitro_core;
-      color: white;
-      font-size: 30px;
-      margin: 0;
+
+      .circle_wrapper {
+        width: 100%;
+        height: 233px;
+        position: relative;
+        .circle_1 {
+          width: 98px;
+          height: 98px;
+          border-radius: 50%;
+          background-color: rgba(50, 91, 173, 0.9);
+          position: absolute;
+          top: 21px;
+          right: 73px;
+          text-align: center;
+
+          p {
+            font-size: 15px;
+            font-family: $Vitro_pride;
+            color: #c8e3ff;
+            margin: 25px 0 0 0;
+          }
+          .percent {
+            color: white;
+            font-size: 25px;
+            font-family: $Vitro_core;
+            margin: 5px 0 0 0;
+          }
+        }
+        .circle_2 {
+          width: 73px;
+          height: 73px;
+          border-radius: 50%;
+          background-color: rgba(50, 91, 173, 0.3);
+          position: absolute;
+          top: 70px;
+          right: 22px;
+        }
+        .circle_3 {
+          width: 82px;
+          height: 82px;
+          border-radius: 50%;
+          background-color: rgba(50, 91, 173, 0.6);
+          position: absolute;
+          right: 29px;
+          bottom: 29px;
+          text-align: center;
+          p {
+            font-size: 15px;
+            font-family: $Vitro_pride;
+            color: #c8e3ff;
+            margin: 15px 0 0 0;
+          }
+          .percent {
+            color: white;
+            font-size: 20px;
+            font-family: $Vitro_core;
+            margin: 3px 0 0 0;
+          }
+        }
+      }
+      .address {
+        height: 80px;
+        position: relative;
+        margin-left: 20px;
+        margin-bottom: 25px;
+
+        .address_top {
+          position: absolute;
+          display: flex;
+          align-items: baseline;
+          top: 0;
+          width: 100%;
+          .ping {
+            color: white;
+            font-size: 30px;
+          }
+          .top_address {
+            margin-left: 10px;
+            font-size: 15px;
+            color: white;
+            font-family: $Vitro_pride;
+          }
+        }
+      }
+      .address_bottom {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        font-family: $Vitro_core;
+        color: white;
+        font-size: 30px;
+        margin: 0;
+      }
     }
   }
 }

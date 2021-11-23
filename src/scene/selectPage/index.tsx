@@ -35,11 +35,14 @@ const SelectScene = () => {
         </div>
       </div>
       <div className={cn("bottom_content")}>
-        <div className={cn("map-card")}>
+        <div className={cn("map-card")} onClick={() => history.push("/search")}>
           <FontAwesomeIcon icon={faMapMarkedAlt} className={cn("map")} />
           <p className={cn("map-card-text")}>장소검색</p>
         </div>
-        <div className={cn("store-card")}>
+        <div
+          className={cn("store-card")}
+          onClick={() => history.push("/category")}
+        >
           <FontAwesomeIcon icon={faStore} className={cn("store")} />
           <p className={cn("store-card-text")}>업종검색</p>
         </div>

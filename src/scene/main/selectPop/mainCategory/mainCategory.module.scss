@@ -1,0 +1,30 @@
+@import "../../../../scss/font.scss";
+
+.container {
+  margin-top: 57px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.category-card {
+  padding: 20px 10px;
+  border-radius: 8px;
+
+  .card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-family: $Vitro_pride;
+
+    & p:first-child {
+      font-family: $Vitro_core;
+      font-size: 28px;
+      color: $deep-blue;
+    }
+    & p {
+      margin: 5px;
+    }
+  }
+}
