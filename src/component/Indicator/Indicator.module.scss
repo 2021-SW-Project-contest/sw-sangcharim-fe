@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .indicator {
@@ -15,7 +16,8 @@
   top: calc(50% - 50px);
   left: calc(50% - 50px);
   animation: spin 1s linear infinite;
-  z-index: 1;
+  // z-index: 1;
+  z-index: 9999999;
 }
 
 .circle,
@@ -113,7 +115,7 @@ $dot-width: 15px !default;
 $dot-height: 15px !default;
 $dot-radius: $dot-width/2 !default;
 
-$dot-color: rgba($deep-blue, 0.9) !default;
+$dot-color: green !default;
 $dot-bg-color: $dot-color !default;
 $dot-before-color: $dot-color !default;
 $dot-after-color: $dot-color !default;
