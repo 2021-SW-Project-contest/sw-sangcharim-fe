@@ -6,7 +6,7 @@ import { getURL } from "./tool";
 export const fetch = async (data?: IMapParamData): Promise<ICloseMap[]> => {
   const response = await axios({
     method: "GET",
-    url: `/map/close`,
+    url: getURL(`/map/close`),
     params: data,
   });
   return response.data;
