@@ -39,7 +39,10 @@ const SelectScene = () => {
           <FontAwesomeIcon icon={faMapMarkedAlt} className={cn("map")} />
           <p className={cn("map-card-text")}>장소검색</p>
         </div>
-        <div className={cn("store-card")}>
+        <div
+          className={cn("store-card")}
+          onClick={() => history.push("/category")}
+        >
           <FontAwesomeIcon icon={faStore} className={cn("store")} />
           <p className={cn("store-card-text")}>업종검색</p>
         </div>

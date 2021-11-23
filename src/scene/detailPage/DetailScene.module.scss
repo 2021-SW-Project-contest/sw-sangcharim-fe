@@ -1,41 +1,39 @@
 @import "../../scss/font.scss";
-body {
-  overflow: scroll;
-  .graph {
-    background-color: rgba(112, 105, 105, 0.21);
+
+.graph {
+  background-color: rgba(112, 105, 105, 0.21);
+  width: 100%;
+  height: 100%;
+  .card {
+    margin-bottom: 17px;
     width: 100%;
-    height: 100%;
-    padding-top: 338px;
-    .card {
-      margin-bottom: 17px;
-      .timesales {
-        width: 350px;
-        margin: 0 auto;
-      }
-      .clientage {
-        width: 340px;
-        height: 160px;
-        margin: 0 auto;
-        position: relative;
-      }
-      .density {
-        width: 160px;
-        height: 160px;
-        margin: 0 auto;
-        position: relative;
-      }
-      .localsales {
-        width: 340px;
-        height: 160px;
-        margin: 0 auto;
-        position: relative;
-      }
-      .dailysales {
-        width: 340px;
-        height: 160px;
-        margin: 0 auto;
-        position: relative;
-      }
+    .timesales {
+      width: 350px;
+      margin: 0 auto;
+    }
+    .clientage {
+      width: 340px;
+      height: 160px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .density {
+      width: 160px;
+      height: 160px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .localsales {
+      width: 340px;
+      height: 160px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .dailysales {
+      width: 340px;
+      height: 160px;
+      margin: 0 auto;
+      position: relative;
     }
   }
 }

@@ -2,9 +2,17 @@ import React from "react";
 import "../../../../scss/font.scss";
 
 import { Bar } from "react-chartjs-2";
-
-const LocalSales = () => {
-  const percent_value = [300000, 503000, 330000];
+import { ISales } from "../../../../interface/IDetail";
+interface LocalSalesProps {
+  dataSet: ISales;
+}
+const LocalSales = (props: LocalSalesProps) => {
+  const { dataSet } = props;
+  const percent_value = [
+    dataSet.sales.min,
+    dataSet.sales.avg,
+    dataSet.sales.max,
+  ];
   const data = {
     labels: ["최소 매출", "평균 매출", "최대 매출"],
     labelsFontFamily: "Vitro_core",
@@ -34,7 +42,7 @@ const LocalSales = () => {
           scales: {
             x: {
               display: false,
-              max: 1000000,
+              max: 100000000,
               grid: {
                 display: false,
               },
@@ -61,17 +69,17 @@ const LocalSales = () => {
               display: false,
             },
             datalabels: {
-              display: true,
-              color: "black",
-              align: "end",
-              anchor: "end",
-              font: {
-                size: 15,
-                family: "Vitro_pride",
-                weight: "bold",
-              },
-              offset: 3,
-              padding: 0,
+              display: false,
+              // color: "black",
+              // align: "end",
+              // anchor: "end",
+              // font: {
+              //   size: 15,
+              //   family: "Vitro_pride",
+              //   weight: "bold",
+              // },
+              // offset: 3,
+              // padding: 0,
             },
           },
         }}

@@ -1,0 +1,56 @@
+@import "../../../scss/font.scss";
+
+.container {
+  display: inline-flex;
+  .list-wrapper {
+    width: 159px;
+    height: 100vh;
+    background: rgba(128, 128, 128, 0.24);
+  }
+  // background-color: rgba(128, 128, 128, 0.24);
+}
+.last_name {
+  color: black;
+  height: 143px;
+  width: 216px;
+  .text {
+    padding-top: 10px;
+    padding-left: 35px;
+    margin: 10px;
+    div {
+      margin-bottom: 10px;
+    }
+  }
+}
+.button {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  width: 159px;
+  height: 43px;
+  font-family: $Vitro_pride;
+  color: gray;
+  text-align: center;
+}
+.active_button {
+  z-index: 3;
+  background: linear-gradient(to right, #255483, #1475ae);
+  border: none;
+  font-size: 20px;
+  width: 153px;
+  height: 43px;
+  box-shadow: 0px 4px 16px rgba(48, 101, 156, 0.3);
+  font-family: $Vitro_pride;
+  color: white;
+  text-align: center;
+  margin-left: 14px;
+  margin-top: 14px;
+}
+.subList-wrapper {
+  margin: 25px;
+  .subList-button {
+    color: black;
+    height: 43px;
+    margin: 0;
+  }
+}
