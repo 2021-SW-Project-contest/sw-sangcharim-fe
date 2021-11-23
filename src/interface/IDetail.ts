@@ -31,7 +31,7 @@ export interface AgeList {
 
 export interface ICustomer extends IResponse {
   area: IAreaType;
-  genderRatio: GenderList;
+  genderRatio: [GenderList];
   ageRatio: AgeList;
   businessList: [DetailBusinessList];
 }

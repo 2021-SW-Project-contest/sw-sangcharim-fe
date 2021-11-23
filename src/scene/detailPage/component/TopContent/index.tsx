@@ -24,20 +24,21 @@ const TopContent = () => {
   const [data, setData] = useState<IFuture[]>();
   const [area, setArea] = useState<IAreaType>();
 
-  // const areaCode = async () => {
-  //   const response = await Area.areafetch();
-  //   const result = response.map((item) => {
-  //     item.areaList.map((item) => {
-  //       item.areaCode;
-  //     });
-  //   });
-  //  console.log(result); -> undifined배열만 가져옴
-  //   setArea(result);
-  // };
+  const areaCode = async () => {
+    const response = await Area.areafetch();
+    const result = response.map((item) => {
+      item.areaList.map((item) => {
+        item.areaCode;
+      });
+    });
+    console.log(result);
+    //-> result를 출력했었을 때 undifined배열만 가져오고 setara에 result를 할당할수없다고 오류뜸
+    setArea(result);
+  };
 
-  // useEffect(() => {
-  //   areaCode();
-  // }, []);
+  useEffect(() => {
+    areaCode();
+  }, []);
 
   return (
     <div className={cn("container")}>

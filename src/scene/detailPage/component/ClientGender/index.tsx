@@ -11,24 +11,39 @@ interface ICustomerParams {
   areaCode: number;
 }
 
+interface ICustomerList {
+  male: Number;
+  female: Number;
+}
+
 const womanpercent = 2;
 const manpercent = 1;
 
-const ClientGender = () => {
-  const [data, setData] = useState<ICustomer>();
+const ClientGender = (prop: ICustomerList) => {
+  const { male, female } = prop;
+  const [data, setData] = useState<ICustomerList[]>();
   const matches = useRouteMatch();
 
   // params를 넘겨서 genderlist에서 male과 female값을 출력하고싶었습니다
-
-  // const getdata = async() =>{
-  //   const params = matches.params as ICustomerParams
-  //   const response = await customerfetch(params.areaCode);
-  //   {response.map((item)=> {item.GenderList.map((in)=>{
-  //     {in.male}
-  //     {in.female}
-  //   })})}
-
-  // }
+  //ICustom 안에 genderRatio안에 male,female 값을 setData에 저장하고 싶었는데 genderlist에 male,female을 인식못함
+  const getdata = async () => {
+    const params = matches.params as ICustomerParams;
+    const response = await customerfetch(params);
+    console.log(response);
+    {
+      response.map((item) => {
+        item.genderRatio.map((i) => {
+          return setData({
+            male: i.male,
+            female: i.female,
+          });
+        });
+      });
+    }
+  };
+  useEffect(() => {
+    getdata();
+  }, []);
   return (
     <div className={cn("container")}>
       <div className={cn("wrapper")}>
