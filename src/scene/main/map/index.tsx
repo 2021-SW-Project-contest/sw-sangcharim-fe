@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./map.module.scss";
 import cb from "classnames/bind";
-import { useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Map } from "react-kakao-maps-sdk";
 import { CustomOverlay, CloseCustomOverlay } from "../../../component";
 import { ICloseMap, IFarMap } from "../../../interface/IMap";
@@ -10,6 +10,7 @@ import { MapAPI, CloseMapAPI } from "../../../api";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../modules";
 import { IMapParamData } from "../../../interface/IBase";
+import { areaCodeParam } from "../../..";
 const cn = cb.bind(styles);
 
 const MapScene = () => {
@@ -18,10 +19,14 @@ const MapScene = () => {
   const [closeData, setCloseData] = useState<ICloseMap[]>();
   const [level, setLevel] = useState(6);
   const pick = useSelector((state: RootState) => state.pick.picked);
+  const { id } = useParams<areaCodeParam>();
 
   const getData = async () => {
+    console.log(id);
+
     try {
       let test: IMapParamData = {};
+
       if (pick.length === 1) {
         test = {
           businessCode1: pick[0].businessCode,
@@ -37,6 +42,9 @@ const MapScene = () => {
           businessCode2: pick[1].businessCode,
           businessCode3: pick[2].businessCode,
         };
+      }
+      if (id) {
+        test = { ...test, areaCode: parseInt(id) };
       }
       const response = await MapAPI.fetch(test);
       const result = await CloseMapAPI.fetch(test);
