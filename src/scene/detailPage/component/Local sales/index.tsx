@@ -61,17 +61,17 @@ const LocalSales = () => {
               display: false,
             },
             datalabels: {
-              display: true,
-              color: "black",
-              align: "end",
-              anchor: "end",
-              font: {
-                size: 15,
-                family: "Vitro_pride",
-                weight: "bold",
-              },
-              offset: 3,
-              padding: 0,
+              display: false,
+              // color: "black",
+              // align: "end",
+              // anchor: "end",
+              // font: {
+              //   size: 15,
+              //   family: "Vitro_pride",
+              //   weight: "bold",
+              // },
+              // offset: 3,
+              // padding: 0,
             },
           },
         }}

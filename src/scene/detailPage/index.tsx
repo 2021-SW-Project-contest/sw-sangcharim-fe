@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./DetailScene.module.scss";
 
 import TopContent from "./component/TopContent";

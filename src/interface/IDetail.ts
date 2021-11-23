@@ -1,15 +1,6 @@
 import { IResponse } from "./IBase";
-import { IAreaListProp } from "./IArea";
+import { IAreaType } from "./IArea";
 import { IAreaList } from "./IMap";
-// areaCode
-// required
-// integer (Areacode)
-// businessCode1
-// integer (Businesscode1)
-// businessCode2
-// integer (Businesscode2)
-// businessCode3
-//detail
 
 export interface GetDetailParmas {
   areaCode: number;
@@ -24,7 +15,7 @@ export interface DetailBusinessList {
   businessCount: number;
 }
 export interface IDetail extends IResponse {
-  area: IAreaListProp;
+  area: IAreaType;
   businessList: [DetailBusinessList];
 }
 
@@ -39,7 +30,7 @@ export interface AgeList {
 }
 
 export interface ICustomer extends IResponse {
-  area: IAreaListProp;
+  area: IAreaType;
   genderRatio: GenderList;
   ageRatio: AgeList;
   businessList: [DetailBusinessList];
@@ -70,7 +61,7 @@ export interface TimeListProp {
 }
 
 export interface ISales extends IResponse {
-  area: IAreaListProp;
+  area: IAreaType;
   sales: SalesListProp;
   day: DayListProp;
   time: TimeListProp;
@@ -79,7 +70,7 @@ export interface ISales extends IResponse {
 
 //future
 export interface IFuture extends IResponse {
-  area: IAreaListProp;
+  area: IAreaType;
   areaSituation: number;
   areaClosure: number;
 }

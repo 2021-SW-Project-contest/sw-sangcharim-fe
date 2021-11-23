@@ -12,7 +12,9 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import cb from "classnames/bind";
 
 import { IDetail, IFuture } from "../../../../interface/IDetail";
+import { IAreaType } from "../../../../interface/IArea";
 import { detailfetch, futurefetch } from "../../../../api/detail.api";
+import { Area } from "../../../../api";
 
 const cn = cb.bind(styles);
 library.add(faMapMarkerAlt, faChevronLeft);
@@ -20,20 +22,22 @@ library.add(faMapMarkerAlt, faChevronLeft);
 const TopContent = () => {
   const history = useHistory();
   const [data, setData] = useState<IFuture[]>();
+  const [area, setArea] = useState<IAreaType>();
 
-  const detail = async () => {
-    try {
-      await futurefetch().then((res) => {
-        console.log(res);
-        // setData(res);
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  };
-  useEffect(() => {
-    detail();
-  }, []);
+  // const areaCode = async () => {
+  //   const response = await Area.areafetch();
+  //   const result = response.map((item) => {
+  //     item.areaList.map((item) => {
+  //       item.areaCode;
+  //     });
+  //   });
+  //  console.log(result); -> undifined배열만 가져옴
+  //   setArea(result);
+  // };
+
+  // useEffect(() => {
+  //   areaCode();
+  // }, []);
 
   return (
     <div className={cn("container")}>

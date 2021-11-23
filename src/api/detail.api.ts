@@ -6,7 +6,6 @@ import {
   ISales,
   GetDetailParmas,
 } from "../interface/IDetail";
-import { IAreaListProp } from "../interface/IArea";
 
 export const detailfetch = async (
   data: GetDetailParmas
@@ -23,33 +22,29 @@ export const salesfetch = async (data: GetDetailParmas): Promise<ISales[]> => {
   const response = await axios({
     method: "GET",
     url: `detail/sales`,
-    params: {
-      areaCode: data?.areaCode,
-    },
+    params: data,
   });
   return response.data;
 };
 
 export const customerfetch = async (
-  data: IAreaListProp
+  data: GetDetailParmas
 ): Promise<ICustomer[]> => {
   const response = await axios({
     method: "GET",
     url: `detail/customer`,
-    params: {
-      areaCode: data?.areaCode,
-    },
+    params: data,
   });
   return response.data;
 };
 
-export const futurefetch = async (data?: IAreaListProp): Promise<IFuture[]> => {
+export const futurefetch = async (
+  data: GetDetailParmas
+): Promise<IFuture[]> => {
   const response = await axios({
     method: "GET",
     url: `detail/future`,
-    params: {
-      areaCode: data?.areaCode,
-    },
+    params: data,
   });
   return response.data;
 };
