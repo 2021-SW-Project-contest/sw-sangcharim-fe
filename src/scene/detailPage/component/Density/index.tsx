@@ -3,18 +3,22 @@ import styles from "./Density.module.scss";
 import cb from "classnames/bind";
 import { Doughnut } from "react-chartjs-2";
 import { Chart } from "chart.js";
+import { DetailBusinessList } from "../../../../interface/IDetail";
 
 const cn = cb.bind(styles);
-
-const Density = () => {
-  const percent_value = 1;
+interface DensityProps {
+  dataSet: DetailBusinessList;
+}
+const Density = (props: DensityProps) => {
+  const { dataSet } = props;
+  // const percent_value = 1;
   const data = {
     maintainAspectRatio: false,
     responsive: false,
     labels: ["a"],
     datasets: [
       {
-        data: [percent_value, 100 - percent_value],
+        data: [dataSet.businessClosure, 100 - dataSet.businessClosure],
         backgroundColor: ["black", "#ededed"],
       },
     ],
@@ -51,8 +55,8 @@ const Density = () => {
         }}
       />
       <div className={cn("text_wrapper")}>
-        <p className={cn("text")}>피자가게 밀집도</p>
-        <p className={cn("percent")}>0.02%</p>
+        <p className={cn("text")}>{dataSet.businessName}폐업률</p>
+        <p className={cn("percent")}>{dataSet.businessClosure}%</p>
       </div>
     </div>
   );

@@ -2,14 +2,21 @@ import { IBusinessListProp } from "../interface/IBusiness";
 
 const ADD = "counter/ADD" as const;
 const REMOVE = "counter/REMOVE" as const;
+const CLEAR = "counter/CLEAR" as const;
 
 export const add = (diff: IBusinessListProp) => ({ type: ADD, payload: diff });
 export const remove = (diff: IBusinessListProp) => ({
   type: REMOVE,
   payload: diff,
 });
+export const clear = () => ({
+  type: CLEAR,
+});
 
-type PickAction = ReturnType<typeof add> | ReturnType<typeof remove>;
+type PickAction =
+  | ReturnType<typeof add>
+  | ReturnType<typeof remove>
+  | ReturnType<typeof clear>;
 
 type PickState = {
   picked: IBusinessListProp[];
@@ -29,6 +36,8 @@ function pick(state: PickState = initialState, action: PickAction) {
           return action.payload.businessCode !== item.businessCode;
         }),
       };
+    case CLEAR:
+      return { picked: [] };
     default:
       return state;
   }

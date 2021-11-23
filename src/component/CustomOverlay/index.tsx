@@ -30,7 +30,7 @@ const CustomOverlay = (props: ICustomOverlayProps) => {
                   ? "__warning"
                   : "__danger"
               )}
-              onClick={() => history.push("/detail")}
+              onClick={() => history.push(`/detail/${item.areaCode}`)}
             >
               <p>{item.businessCount}</p>
             </div>

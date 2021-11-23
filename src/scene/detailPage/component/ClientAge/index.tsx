@@ -6,18 +6,29 @@ import "../../../../scss/font.scss";
 import ChartDataLabels from "chartjs-plugin-datalabels";
 import { Bar } from "react-chartjs-2";
 import { Chart } from "chart.js";
+import { AgeList } from "../../../../interface/IDetail";
 
 Chart.register(ChartDataLabels);
 const cn = cb.bind(styles);
-
-const ClientAge = () => {
+interface ClientAgeProps {
+  dataSet: AgeList;
+}
+const ClientAge = (props: ClientAgeProps) => {
+  const { dataSet } = props;
   const data = {
-    labels: ["10대", "20대", "30대", "40대", "50대"],
+    labels: ["10대", "20대", "30대", "40대", "50대", "60대"],
     labelsFontFamily: "Vitro_pride",
     LabelFontColor: "Red",
     datasets: [
       {
-        data: [30, 50, 30, 30, 40],
+        data: [
+          dataSet.age10.toFixed(2),
+          dataSet.age20.toFixed(2),
+          dataSet.age30.toFixed(2),
+          dataSet.age40.toFixed(2),
+          dataSet.age50.toFixed(2),
+          dataSet.age60.toFixed(2),
+        ],
         backgroundColor: [
           "#6f8cc5",
           "#466bb5",

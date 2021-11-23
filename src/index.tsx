@@ -15,6 +15,9 @@ const store = createStore(rootReducer);
 export interface areaCodeParam {
   id?: string;
 }
+export interface areaIdParam {
+  id: string;
+}
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -22,9 +25,12 @@ ReactDOM.render(
         <Switch>
           <Route exact path={"/"} component={SelectScene}></Route>
           <Route path={`/main/:id`} component={MainScene}></Route>
-          <Route path={"/search"} component={SearchScene}></Route>
 
-          <Route path={"/detail"} component={DetailScene}></Route>
+          <Route path={`/main`} component={MainScene}></Route>
+
+          <Route path={"/search/"} component={SearchScene}></Route>
+
+          <Route path={"/detail/:id"} component={DetailScene}></Route>
         </Switch>
       </Router>
     </Provider>

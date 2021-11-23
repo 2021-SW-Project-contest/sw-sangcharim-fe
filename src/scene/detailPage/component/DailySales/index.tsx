@@ -2,9 +2,21 @@ import React from "react";
 import "../../../../scss/font.scss";
 
 import { Bar } from "react-chartjs-2";
-
-const DailySales = () => {
-  const percent_value = [30, 50, 33, 70, 20, 10, 90];
+import { ISales } from "../../../../interface/IDetail";
+interface DailySalesProps {
+  dataSet: ISales;
+}
+const DailySales = (props: DailySalesProps) => {
+  const { dataSet } = props;
+  const percent_value = [
+    dataSet.day.mon,
+    dataSet.day.tue,
+    dataSet.day.wed,
+    dataSet.day.thu,
+    dataSet.day.fri,
+    dataSet.day.sat,
+    dataSet.day.sun,
+  ];
   const data = {
     labels: ["월", "화", "수", "목", "금", "토", "일"],
     labelsFontFamily: "Vitro_core",
