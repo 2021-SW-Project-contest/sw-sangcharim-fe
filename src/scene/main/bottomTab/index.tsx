@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./bottomTab.module.scss";
 import cb from "classnames/bind";
-import { arrow } from "../../../asset/image";
-import { HiOutlineHome } from "react-icons/hi";
-import { GrMapLocation } from "react-icons/gr";
-
+import { house, map } from "../../../asset/image";
+import BottomCircleButton from "./bottomCircleButton";
+import { useHistory } from "react-router";
 const cn = cb.bind(styles);
-
-const BottomTab = () => {
+interface IBottomTab {
+  setShow: any;
+  show: boolean;
+}
+const BottomTab = (props: IBottomTab) => {
+  const { setShow, show } = props;
+  const history = useHistory();
   return (
     <div className={cn("container")}>
+      <div className={cn("bottom-button")}>
+        <BottomCircleButton
+          className={cn(show ? "open" : "")}
+          onClick={() => {
+            setShow(!show);
+          }}
+        ></BottomCircleButton>
+      </div>
       <div className={cn("wrapper")}>
-        <div className={cn("tab-item")}>
-          <HiOutlineHome size={50} color={"#09417b"} />
+        {/* TODO: 홈 이동시 선택된 업종 초기화 하기 */}
+        <div className={cn("tab-item")} onClick={() => history.push("/")}>
+          <img src={house} alt={"tabIcon"} />
         </div>
-        <div className={cn("tab-item")}>
-          <GrMapLocation size={50} color={"#09417b"} />
+        <div className={cn("tab-item")} onClick={() => history.push("/main")}>
+          <img src={map} alt={"tabIcon"} />
         </div>
       </div>
     </div>

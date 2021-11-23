@@ -1,0 +1,28 @@
+@import "../../scss/font.scss";
+
+.container {
+  border-radius: 100px;
+  width: 69px;
+  height: 69px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-family: $Vitro_core;
+    color: #ffffff;
+    font-size: 28px;
+  }
+  &.__good {
+    background-color: rgba(87, 177, 100, 0.8);
+    border: 1px solid rgb(87, 177, 100);
+  }
+  &.__danger {
+    background-color: rgba(231, 70, 84, 0.8);
+    border: 1px solid rgb(231, 70, 84);
+  }
+  &.__warning {
+    background-color: rgba(231, 178, 70, 0.8);
+    border: 1px solid rgb(231, 178, 70);
+  }
+}
