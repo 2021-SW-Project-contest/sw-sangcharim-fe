@@ -11,6 +11,7 @@ import { Provider } from "react-redux";
 
 import { createStore } from "redux";
 import rootReducer from "./modules";
+import CategorySearchScene from "./scene/CategorySearchPage";
 const store = createStore(rootReducer);
 export interface areaCodeParam {
   id?: string;
@@ -28,7 +29,8 @@ ReactDOM.render(
 
           <Route path={`/main`} component={MainScene}></Route>
 
-          <Route path={"/search/"} component={SearchScene}></Route>
+          <Route path={"/search"} component={SearchScene}></Route>
+          <Route path={"/category"} component={CategorySearchScene}></Route>
 
           <Route path={"/detail/:id"} component={DetailScene}></Route>
         </Switch>
