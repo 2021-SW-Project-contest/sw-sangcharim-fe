@@ -5,24 +5,29 @@ import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import MainScene from "./scene/main";
 import SelectScene from "./scene/selectPage";
+import SearchScene from "./scene/searchPage";
 import DetailScene from "./scene/detailPage";
 import { Provider } from "react-redux";
 
 import { createStore } from "redux";
 import rootReducer from "./modules";
 const store = createStore(rootReducer);
+export interface areaCodeParam {
+  id?: string;
+}
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <Router>
         <Switch>
           <Route exact path={"/"} component={SelectScene}></Route>
-          <Route path={"/main"} component={MainScene}></Route>
+          <Route path={`/main/:id`} component={MainScene}></Route>
+          <Route path={"/search"} component={SearchScene}></Route>
+
           <Route path={"/detail"} component={DetailScene}></Route>
         </Switch>
       </Router>
     </Provider>
-    ,
   </React.StrictMode>,
 
   document.getElementById("root")
