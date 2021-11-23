@@ -6,7 +6,7 @@ import { getURL } from "./tool";
 export const fetch = async (data?: IMapParamData): Promise<IFarMap> => {
   const response = await axios({
     method: "GET",
-    url: `/map/far`,
+    url: getURL(`/map/far`),
     params: data,
   });
   return response.data;

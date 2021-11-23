@@ -6,13 +6,14 @@ import {
   ISales,
   GetDetailParmas,
 } from "../interface/IDetail";
+import { getURL } from "./tool";
 
 export const detailfetch = async (
   data: GetDetailParmas
 ): Promise<IDetail[]> => {
   const response = await axios({
     method: "GET",
-    url: `/detail`,
+    url: getURL(`/detail`),
     params: data,
   });
   return response.data;
@@ -21,7 +22,7 @@ export const detailfetch = async (
 export const salesfetch = async (data: GetDetailParmas): Promise<ISales> => {
   const response = await axios({
     method: "GET",
-    url: `/detail/sales`,
+    url: getURL(`/detail/sales`),
     params: data,
   });
   return response.data;
@@ -32,7 +33,7 @@ export const customerfetch = async (
 ): Promise<ICustomer> => {
   const response = await axios({
     method: "GET",
-    url: `/detail/customer`,
+    url: getURL(`/detail/customer`),
     params: data,
   });
   return response.data;
