@@ -17,7 +17,10 @@ const CustomOverlay = (props: ICustomOverlayProps) => {
     <>
       {data.map((item: IAreaList, key: number) => {
         return (
-          <CustomOverlayMap position={{ lat: item.lat, lng: item.long }}>
+          <CustomOverlayMap
+            key={key}
+            position={{ lat: item.lat, lng: item.long }}
+          >
             <div
               className={cn(
                 "container",

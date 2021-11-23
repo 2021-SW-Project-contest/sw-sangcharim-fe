@@ -1,11 +1,13 @@
 import axios from "axios";
+import { IMapParamData } from "../interface/IBase";
 import { IFarMap } from "../interface/IMap";
 import { getURL } from "./tool";
 
-export const fetch = async (): Promise<IFarMap> => {
+export const fetch = async (data?: IMapParamData): Promise<IFarMap> => {
   const response = await axios({
     method: "GET",
     url: `/map/far`,
+    params: data,
   });
   return response.data;
 };

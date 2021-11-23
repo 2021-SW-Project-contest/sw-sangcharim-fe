@@ -5,9 +5,12 @@ import { restaurant, service, retail } from "../../../../asset/image";
 import { IBusinessListProp } from "../../../../interface/IBusiness";
 import { Business } from "../../../../api";
 import { CategoryTag } from "../../../../component";
-import { isTemplateExpression } from "typescript";
 import SubMiddle from "./subMiddle";
 import Indicator from "../../../../component/Indicator";
+
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../../../../modules";
+import { add, remove } from "../../../../modules/pick";
 const cn = cb.bind(styles);
 
 interface ISubCategorySceneProps {
@@ -28,6 +31,9 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
   const { selected, setSelected } = props;
   const [data, setData] = useState<IdataSet>();
 
+  const pick = useSelector((state: RootState) => state.pick.picked);
+  const dispatch = useDispatch();
+
   const getData = async () => {
     const response = await Business.fetch();
     response.map((item) => {
@@ -39,6 +45,26 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
         });
       }
     });
+  };
+
+  const onAdd = (diff: IBusinessListProp) => {
+    let isPicked = true;
+    pick &&
+      pick.map((item) => {
+        if (item.businessCode === diff.businessCode) {
+          isPicked = false;
+        }
+      });
+    if (pick.length < 3 && isPicked) {
+      dispatch(add(diff));
+      // console.log(pick.length);
+      // console.log(pick[0].businessCode);
+      // console.log(pick[1].businessCode);
+    } else if (!(pick.length < 3)) {
+      alert("최대 3가지 항목 선택 가능합니다.");
+    } else if (!isPicked) {
+      alert("이미 선택된 항목입니다.");
+    }
   };
   useEffect(() => {
     getData();
@@ -57,7 +83,12 @@ const SubCategoryScene = (props: ISubCategorySceneProps) => {
           <div className={cn("tag-wrapper")}>
             {data &&
               data.categoryList.map((item: IBusinessListProp, key: number) => (
-                <CategoryTag key={key} className="_outline">
+                <CategoryTag
+                  data={item}
+                  key={key}
+                  className="_outline"
+                  onClick={onAdd}
+                >
                   {item.businessName}
                 </CategoryTag>
               ))}

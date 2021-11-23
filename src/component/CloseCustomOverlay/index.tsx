@@ -19,7 +19,10 @@ const CloseCustomOverlay = (props: ICloseCustomOverlayProps) => {
       {data &&
         data.map((item: ICloseMap, key: number) => {
           return (
-            <CustomOverlayMap position={{ lat: item.lat, lng: item.long }}>
+            <CustomOverlayMap
+              key={key}
+              position={{ lat: item.lat, lng: item.long }}
+            >
               <ToolBox> {item.name}</ToolBox>
             </CustomOverlayMap>
           );

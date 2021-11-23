@@ -2,36 +2,56 @@ import React, { useEffect, useState } from "react";
 import styles from "./map.module.scss";
 import cb from "classnames/bind";
 import { useHistory } from "react-router-dom";
-import { Map, MapMarker, MarkerClusterer } from "react-kakao-maps-sdk";
-import { fetch } from "../../../api/map.api";
+import { Map } from "react-kakao-maps-sdk";
 import { CustomOverlay, CloseCustomOverlay } from "../../../component";
 import { ICloseMap, IFarMap } from "../../../interface/IMap";
 import Indicator from "../../../component/Indicator";
 import { MapAPI, CloseMapAPI } from "../../../api";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../modules";
+import { IMapParamData } from "../../../interface/IBase";
 const cn = cb.bind(styles);
 
 const MapScene = () => {
   const [data, setData] = useState<IFarMap>();
+
   const [closeData, setCloseData] = useState<ICloseMap[]>();
   const [level, setLevel] = useState(6);
-  const history = useHistory();
+  const pick = useSelector((state: RootState) => state.pick.picked);
+
   const getData = async () => {
     try {
-      // var level = map.getLevel();
-      const response = await MapAPI.fetch();
-      const result = await CloseMapAPI.fetch();
+      let test: IMapParamData = {};
+      if (pick.length === 1) {
+        test = {
+          businessCode1: pick[0].businessCode,
+        };
+      } else if (pick.length === 2) {
+        test = {
+          businessCode1: pick[0].businessCode,
+          businessCode2: pick[1].businessCode,
+        };
+      } else if (pick.length === 3) {
+        test = {
+          businessCode1: pick[0].businessCode,
+          businessCode2: pick[1].businessCode,
+          businessCode3: pick[2].businessCode,
+        };
+      }
+      const response = await MapAPI.fetch(test);
+      const result = await CloseMapAPI.fetch(test);
 
       setData(response);
       setCloseData(result);
 
-      console.log(result);
+      console.log(response);
     } catch (e) {
       console.log(e);
     }
   };
   useEffect(() => {
     getData();
-  }, []);
+  }, [pick.length]);
   return (
     <>
       {data ? (
