@@ -82,7 +82,9 @@ const TopContent = () => {
         <div className={cn("circle_wrapper")}>
           <div className={cn("circle_1")}>
             <p>평균 폐업률</p>
-            <p className={cn("percent")}>{data?.areaClosure.toFixed(2)}%</p>
+            <p className={cn("percent")}>
+              {data ? Number(data?.areaClosure).toFixed(2) : 0.1}%
+            </p>
           </div>
           <div className={cn("circle_2")} />
           <div className={cn("circle_3")}>
