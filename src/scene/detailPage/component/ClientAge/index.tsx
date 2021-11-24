@@ -22,12 +22,12 @@ const ClientAge = (props: ClientAgeProps) => {
     datasets: [
       {
         data: [
-          dataSet.age10.toFixed(2),
-          dataSet.age20.toFixed(2),
-          dataSet.age30.toFixed(2),
-          dataSet.age40.toFixed(2),
-          dataSet.age50.toFixed(2),
-          dataSet.age60.toFixed(2),
+          Number(dataSet.age10).toFixed(2),
+          Number(dataSet.age20).toFixed(2),
+          Number(dataSet.age30).toFixed(2),
+          Number(dataSet.age40).toFixed(2),
+          Number(dataSet.age50).toFixed(2),
+          Number(dataSet.age60).toFixed(2),
         ],
         backgroundColor: [
           "#6f8cc5",
@@ -64,7 +64,7 @@ const ClientAge = (props: ClientAgeProps) => {
             },
             y: {
               display: false,
-              max: 100,
+              max: 60,
               min: 0,
             },
           },
