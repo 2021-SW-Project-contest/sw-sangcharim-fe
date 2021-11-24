@@ -47,7 +47,14 @@
   margin-top: 14px;
 }
 .subList-wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   margin: 25px;
+  overflow-y: scroll !important;
+  height: calc(100vh - 224px);
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
   .subList-button {
     color: black;
     height: 43px;
