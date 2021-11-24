@@ -92,7 +92,7 @@ const DetailScene = () => {
             )}
           </div>
         </DetailCard>
-        {future && future.business !== undefined ? (
+        {/* {future && future.business !== undefined ? (
           <DetailCard className={cn("card")} text={"업종별 폐업률"}>
             {future.business.map((item, key) => {
               return (
@@ -104,7 +104,7 @@ const DetailScene = () => {
           </DetailCard>
         ) : (
           <></>
-        )}
+        )} */}
 
         <DetailCard className={cn("card")} text={"지역 매출"}>
           <div className={cn("localsales")}>

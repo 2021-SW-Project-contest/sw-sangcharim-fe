@@ -70,7 +70,7 @@ const MapScene = () => {
           onZoomChanged={(map) => setLevel(map.getLevel())}
         >
           {/* 업종이 밀집되지않은 곳을 가까이서 보는게 좋을듯 */}
-          {level < 3 ? (
+          {level < 4 ? (
             closeData ? (
               <CloseCustomOverlay data={closeData}></CloseCustomOverlay>
             ) : (
