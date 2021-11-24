@@ -58,7 +58,7 @@ const TimeSales = (props: TimeSalesProps) => {
           },
           y: {
             display: false,
-            max: 70,
+            max: 100,
             min: 0,
           },
         },
