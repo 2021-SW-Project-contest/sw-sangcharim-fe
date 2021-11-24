@@ -1,124 +1,132 @@
 @import "../../scss/font.scss";
-
-.top_content {
-  height: 481px;
-  width: 100%;
-  position: relative;
-  .header {
+body {
+  width: 100vw;
+  height: 100wh;
+  .top_content {
+    height: 450px;
     width: 100%;
-    .header_text {
-      padding-top: 70px;
-      padding-left: 30px;
-      font-family: $Vitro_core;
-      font-size: 40px;
-      color: $deep-blue;
-      margin: 0;
+    position: relative;
+    .header {
+      width: 100%;
+      .header_text {
+        padding-top: 70px;
+        padding-left: 30px;
+        font-family: $Vitro_core;
+        font-size: 40px;
+        color: $deep-blue;
+        margin: 0;
+      }
+    }
+    .description {
+      p {
+        font-family: $Vitro_pride;
+        color: $deep-gray;
+        margin: 0;
+        font-size: 24px;
+        padding-left: 30px;
+        padding-top: 34px;
+        font-weight: bold;
+      }
+    }
+    .img_wrapper {
+      width: 100%;
+      position: absolute;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      bottom: 0;
+      box-shadow: 0 20px 20px #f7f7f7;
+
+      .img {
+        width: 280px;
+        height: 274px;
+      }
     }
   }
-  .description {
-    p {
-      font-family: $Vitro_pride;
-      color: $deep-gray;
-      margin: 0;
+
+  .bottom_content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+
+    .map-card {
+      width: 152px;
+      height: 137px;
+      box-shadow: 0px 6px 16px rgba(38, 82, 127, 0.6);
+      background: linear-gradient(to bottom right, #09417b, #4078b2);
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .wrapper {
+        .map {
+          width: 58px;
+          height: auto;
+          color: #ffffff;
+        }
+        .map-card-text {
+          font-size: 17px;
+          width: auto;
+          color: #ffffff;
+          font-family: $Vitro_pride;
+          margin: 0;
+          padding-top: 10px;
+        }
+      }
+    }
+    .store-card {
+      width: 152px;
+      height: 137px;
+      box-shadow: 0px 6px 16px rgba(38, 82, 127, 0.6);
+      background: #ffffff;
+      border-radius: 10px;
+      margin-left: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .wrapper {
+        .store {
+          width: 58px;
+          height: auto;
+          color: $light-blue;
+        }
+        .store-card-text {
+          font-size: 17px;
+          color: $light-blue;
+          font-family: $Vitro_pride;
+          margin: 0;
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+
+  .bottom-card {
+    margin-top: 5%;
+    margin-left: 30px;
+    width: 315px;
+    height: 70px;
+    border: 2px solid$light-blue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 5%;
+
+    .bottom-card-text {
+      color: $light-blue;
       font-size: 26px;
+      font-family: $Vitro_pride;
+      margin: 0;
       padding-left: 30px;
-      padding-top: 34px;
-      font-weight: bold;
     }
-  }
-  .img_wrapper {
-    width: 100%;
-    position: absolute;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    bottom: 0;
-    box-shadow: 0 36px 35px #f7f7f7;
-
-    .img {
-      width: 294px;
-      height: 274px;
-    }
-  }
-}
-
-.bottom_content {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-
-  .map-card {
-    width: 152px;
-    height: 137px;
-    box-shadow: 0px 6px 16px rgba(38, 82, 127, 0.6);
-    background: linear-gradient(to bottom right, #09417b, #4078b2);
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-
-    .map {
-      width: 58px;
-      height: auto;
-      color: #ffffff;
-    }
-    .map-card-text {
-      font-size: 17px;
-      color: #ffffff;
-      font-family: $Vitro_pride;
-      margin: 0;
-      padding-top: 10px;
-    }
-  }
-  .store-card {
-    width: 152px;
-    height: 137px;
-    box-shadow: 0px 6px 16px rgba(38, 82, 127, 0.6);
-    background: #ffffff;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-left: 20px;
-    .store {
-      width: 58px;
-      height: auto;
+    .arrow {
       color: $light-blue;
+      font-size: 26px;
+      padding-left: 80px;
+      width: 40px;
     }
-    .store-card-text {
-      font-size: 17px;
-      color: $light-blue;
-      font-family: $Vitro_pride;
-      margin: 0;
-      padding-top: 10px;
-    }
-  }
-}
-
-.bottom-card {
-  margin-top: 30px;
-  margin-left: 30px;
-  width: 315px;
-  height: 70px;
-  border: 2px solid$light-blue;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-
-  .bottom-card-text {
-    color: $light-blue;
-    font-size: 26px;
-    font-family: $Vitro_pride;
-    margin: 0;
-    padding-left: 30px;
-  }
-  .arrow {
-    color: $light-blue;
-    font-size: 26px;
-    padding-left: 80px;
-    width: 40px;
   }
 }
