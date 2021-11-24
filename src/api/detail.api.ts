@@ -42,7 +42,7 @@ export const customerfetch = async (
 export const futurefetch = async (data: GetDetailParmas): Promise<IFuture> => {
   const response = await axios({
     method: "GET",
-    url: `/detail/future`,
+    url: getURL(`/detail/future`),
     params: data,
   });
   return response.data;
