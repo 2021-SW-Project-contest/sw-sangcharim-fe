@@ -66,7 +66,7 @@ const DailySales = (props: DailySalesProps) => {
                 display: false,
               },
 
-              max: 100,
+              max: 60,
               min: 0,
             },
           },
@@ -86,6 +86,9 @@ const DailySales = (props: DailySalesProps) => {
               },
               offset: -2,
               padding: 0,
+              formatter: function (value) {
+                return value + "%";
+              },
             },
           },
         }}

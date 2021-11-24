@@ -3,6 +3,7 @@ import "../../../../scss/font.scss";
 
 import { Bar } from "react-chartjs-2";
 import { ISales } from "../../../../interface/IDetail";
+import { faBlackberry } from "@fortawesome/free-brands-svg-icons";
 interface LocalSalesProps {
   dataSet: ISales;
 }
@@ -38,11 +39,11 @@ const LocalSales = (props: LocalSalesProps) => {
           responsive: true,
           maintainAspectRatio: true,
           aspectRatio: 2,
-
           scales: {
             x: {
               display: false,
               max: 100000000,
+              min: 0,
               grid: {
                 display: false,
               },
@@ -60,7 +61,7 @@ const LocalSales = (props: LocalSalesProps) => {
                   family: "Vitro_core",
                 },
               },
-              max: 100,
+
               min: 0,
             },
           },
@@ -70,16 +71,16 @@ const LocalSales = (props: LocalSalesProps) => {
             },
             datalabels: {
               display: false,
-              // color: "black",
-              // align: "end",
-              // anchor: "end",
-              // font: {
-              //   size: 15,
-              //   family: "Vitro_pride",
-              //   weight: "bold",
-              // },
-              // offset: 3,
-              // padding: 0,
+              color: "black",
+              align: "end",
+              anchor: "start",
+              font: {
+                size: 15,
+                family: "Vitro_pride",
+                weight: "bold",
+              },
+              offset: 3,
+              padding: 0,
             },
           },
         }}

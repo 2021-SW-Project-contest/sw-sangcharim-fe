@@ -64,7 +64,7 @@ const ClientAge = (props: ClientAgeProps) => {
             },
             y: {
               display: false,
-              max: 100,
+              max: 60,
               min: 0,
             },
           },
