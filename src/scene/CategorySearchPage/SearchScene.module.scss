@@ -1,6 +1,10 @@
 @import "../../scss/font.scss";
 
 .container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  height: 100vh;
+  overflow-y: hidden;
   .top_content {
     height: 224px;
     width: 100%;
@@ -62,4 +66,7 @@
   position: absolute;
   bottom: -1px;
   left: 33px;
+}
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }

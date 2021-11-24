@@ -1,6 +1,10 @@
 @import "../../scss/font.scss";
 
 .container {
+  height: 100vh;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
   .top_content {
     height: 224px;
     width: 100%;
@@ -56,4 +60,7 @@
       background-color: rgba(128, 128, 128, 0.24);
     }
   }
+}
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
