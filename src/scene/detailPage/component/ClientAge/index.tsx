@@ -87,7 +87,7 @@ const ClientAge = (props: ClientAgeProps) => {
                 family: "Vitro_pride",
               },
               formatter: function (value) {
-                return value + "%";
+                return Math.ceil(value) + "%";
               },
             },
           },
